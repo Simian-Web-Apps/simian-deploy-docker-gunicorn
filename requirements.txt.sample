@@ -1,0 +1,12 @@
+# birdswarm example
+cython
+setuptools
+matplotlib
+scipy
+/scripts/wheels/noise-1.2.2-cp310-cp310-linux_x86_64.whl
+
+# youtube example
+google-api-python-client
+deep-translator
+pycountry
+isodate

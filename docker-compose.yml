@@ -1,0 +1,19 @@
+services:
+  simian-sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYPI_SERVER_URL=https://pypi.simiansuite.com  # PyPI server to download simian-gui
+      - APPS_FOLDER=/scripts/apps                     # The sub-folders of the apps folder will be put on the Python path.
+      - GUNICORN_WORKERS=4
+      - SIMIAN_PRE=
+    ports:
+      - 5000:5000                                     # To host on another port, change the first port number.
+    volumes:
+      # - ./apt-get-packages.txt:/scripts/apt-get-packages.txt
+      # - ./requirements.txt:/scripts/requirements.txt
+      # - ./wheels:/scripts/wheels
+      # - ./certificate.crt:/usr/local/share/ca-certificates/certificate.crt
+      - ./apps:/scripts/apps
+      
